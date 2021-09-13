@@ -26,3 +26,5 @@ o = n([out_h1, out_h2], bias)
 y_true = [1, 0, 0, 1]
 y_pred = [0, 0, 0, 0]
 print(o)
+
+##TEST
