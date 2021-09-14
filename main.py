@@ -1,6 +1,12 @@
 import numpy as np
 
-sigmoid = lambda x: 1 / (1 + np.exp(-x))
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def d_sigmoid(f):
+    fx = sigmoid(f)
+    return fx*(1-fx)
+
 inputs = np.array([2, 3])
 weights = np.array([0, 1])
 bias = 0
@@ -26,5 +32,3 @@ o = n([out_h1, out_h2], bias)
 y_true = [1, 0, 0, 1]
 y_pred = [0, 0, 0, 0]
 print(o)
-
-##TEST
