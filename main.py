@@ -3,32 +3,31 @@ import numpy as np
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
-def d_sigmoid(f):
-    fx = sigmoid(f)
+def d_sigmoid(x):
+    fx = sigmoid(x)
     return fx*(1-fx)
 
-inputs = np.array([2, 3])
-weights = np.array([0, 1])
-bias = 0
+def mse(y_true, y_pred):
+    return ((y_true-y_pred)**2).mean()
+
+# Weights
+w1 = np.random.normal()
+w2 = np.random.normal()
+w3 = np.random.normal()
+w4 = np.random.normal()
+w5 = np.random.normal()
+w6 = np.random.normal()
+
+# Biases
+b1 = np.random.normal()
+b2 = np.random.normal()
+b3 = np.random.normal()
+
 
 def n(inputs, bias):
     sum = inputs[0]*weights[0] + inputs[1]*weights[1] + bias
     output = sigmoid(sum)
     return output
 
-
-def mse(y_true, y_pred):
-    return ((y_true-y_pred)**2).mean()
-
-##Neural Network
-
-out_h1 = n(inputs, bias)
-out_h2 = n(inputs, bias)
-
-o = n([out_h1, out_h2], bias)
-
-##Training
-
-y_true = [1, 0, 0, 1]
-y_pred = [0, 0, 0, 0]
-print(o)
+def feedforward():
+    pass
